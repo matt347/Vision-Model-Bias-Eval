@@ -1,0 +1,1192 @@
+{
+  "config": {
+    "dataset_name": "HuggingFaceM4/FairFace",
+    "dataset_config": "1.25",
+    "epochs": 10,
+    "batch_size": 32,
+    "lr": 0.0001,
+    "weight_decay": 0.0001,
+    "num_workers": 4,
+    "image_size": 224,
+    "seed": 42,
+    "freeze_backbone": false,
+    "pretrained": false,
+    "races": [
+      "White",
+      "Black",
+      "Indian",
+      "Middle Eastern",
+      "Latino_Hispanic",
+      "East Asian",
+      "Southeast Asian"
+    ]
+  },
+  "runs": [
+    {
+      "train_race": {
+        "id": 3,
+        "name": "White"
+      },
+      "summary": {
+        "in_distribution_accuracy": 0.7904076738609113,
+        "mean_out_of_distribution_accuracy": 0.7416050847386956,
+        "worst_out_of_distribution_accuracy": 0.6638817480719794,
+        "gap_mean_ood_vs_in_dist": 0.04880258912221569,
+        "gap_worst_ood_vs_in_dist": 0.12652592578893185
+      },
+      "per_group": [
+        {
+          "group": "in_dist",
+          "race": "White",
+          "n_samples": 2085,
+          "loss": 0.449148,
+          "accuracy": 0.790408,
+          "gap_vs_in_dist": 0.0
+        },
+        {
+          "group": "ood",
+          "race": "East Asian",
+          "n_samples": 1550,
+          "loss": 0.519306,
+          "accuracy": 0.736129,
+          "gap_vs_in_dist": 0.054279
+        },
+        {
+          "group": "ood",
+          "race": "Indian",
+          "n_samples": 1516,
+          "loss": 0.507458,
+          "accuracy": 0.757916,
+          "gap_vs_in_dist": 0.032492
+        },
+        {
+          "group": "ood",
+          "race": "Black",
+          "n_samples": 1556,
+          "loss": 0.621326,
+          "accuracy": 0.663882,
+          "gap_vs_in_dist": 0.126526
+        },
+        {
+          "group": "ood",
+          "race": "Middle Eastern",
+          "n_samples": 1209,
+          "loss": 0.458187,
+          "accuracy": 0.782465,
+          "gap_vs_in_dist": 0.007943
+        },
+        {
+          "group": "ood",
+          "race": "Latino_Hispanic",
+          "n_samples": 1623,
+          "loss": 0.44907,
+          "accuracy": 0.790511,
+          "gap_vs_in_dist": -0.000104
+        },
+        {
+          "group": "ood",
+          "race": "Southeast Asian",
+          "n_samples": 1415,
+          "loss": 0.553142,
+          "accuracy": 0.718728,
+          "gap_vs_in_dist": 0.07168
+        },
+        {
+          "group": "ood",
+          "race": "all",
+          "n_samples": 8869,
+          "loss": 0.519393,
+          "accuracy": 0.74067,
+          "gap_vs_in_dist": 0.049738
+        }
+      ],
+      "config": {
+        "dataset_name": "HuggingFaceM4/FairFace",
+        "dataset_config": "1.25",
+        "train_race": "White",
+        "epochs": 10,
+        "batch_size": 32,
+        "lr": 0.0001,
+        "weight_decay": 0.0001,
+        "num_workers": 4,
+        "image_size": 224,
+        "seed": 42,
+        "freeze_backbone": false,
+        "pretrained": false,
+        "output_dir": "results/race_comparison"
+      }
+    },
+    {
+      "train_race": {
+        "id": 2,
+        "name": "Black"
+      },
+      "summary": {
+        "in_distribution_accuracy": 0.6928020565552699,
+        "mean_out_of_distribution_accuracy": 0.6340413646638269,
+        "worst_out_of_distribution_accuracy": 0.5943462897526501,
+        "gap_mean_ood_vs_in_dist": 0.05876069189144306,
+        "gap_worst_ood_vs_in_dist": 0.0984557668026198
+      },
+      "per_group": [
+        {
+          "group": "in_dist",
+          "race": "Black",
+          "n_samples": 1556,
+          "loss": 0.589461,
+          "accuracy": 0.692802,
+          "gap_vs_in_dist": 0.0
+        },
+        {
+          "group": "ood",
+          "race": "East Asian",
+          "n_samples": 1550,
+          "loss": 0.652995,
+          "accuracy": 0.629677,
+          "gap_vs_in_dist": 0.063125
+        },
+        {
+          "group": "ood",
+          "race": "Indian",
+          "n_samples": 1516,
+          "loss": 0.619038,
+          "accuracy": 0.664248,
+          "gap_vs_in_dist": 0.028554
+        },
+        {
+          "group": "ood",
+          "race": "White",
+          "n_samples": 2085,
+          "loss": 0.659328,
+          "accuracy": 0.623501,
+          "gap_vs_in_dist": 0.069301
+        },
+        {
+          "group": "ood",
+          "race": "Middle Eastern",
+          "n_samples": 1209,
+          "loss": 0.673828,
+          "accuracy": 0.60794,
+          "gap_vs_in_dist": 0.084862
+        },
+        {
+          "group": "ood",
+          "race": "Latino_Hispanic",
+          "n_samples": 1623,
+          "loss": 0.594387,
+          "accuracy": 0.684535,
+          "gap_vs_in_dist": 0.008267
+        },
+        {
+          "group": "ood",
+          "race": "Southeast Asian",
+          "n_samples": 1415,
+          "loss": 0.683655,
+          "accuracy": 0.594346,
+          "gap_vs_in_dist": 0.098456
+        },
+        {
+          "group": "ood",
+          "race": "all",
+          "n_samples": 9398,
+          "loss": 0.646097,
+          "accuracy": 0.635242,
+          "gap_vs_in_dist": 0.057561
+        }
+      ],
+      "config": {
+        "dataset_name": "HuggingFaceM4/FairFace",
+        "dataset_config": "1.25",
+        "train_race": "Black",
+        "epochs": 10,
+        "batch_size": 32,
+        "lr": 0.0001,
+        "weight_decay": 0.0001,
+        "num_workers": 4,
+        "image_size": 224,
+        "seed": 42,
+        "freeze_backbone": false,
+        "pretrained": false,
+        "output_dir": "results/race_comparison"
+      }
+    },
+    {
+      "train_race": {
+        "id": 1,
+        "name": "Indian"
+      },
+      "summary": {
+        "in_distribution_accuracy": 0.7974934036939314,
+        "mean_out_of_distribution_accuracy": 0.66852561928425,
+        "worst_out_of_distribution_accuracy": 0.6409893992932862,
+        "gap_mean_ood_vs_in_dist": 0.12896778440968137,
+        "gap_worst_ood_vs_in_dist": 0.15650400440064516
+      },
+      "per_group": [
+        {
+          "group": "in_dist",
+          "race": "Indian",
+          "n_samples": 1516,
+          "loss": 0.433743,
+          "accuracy": 0.797493,
+          "gap_vs_in_dist": 0.0
+        },
+        {
+          "group": "ood",
+          "race": "East Asian",
+          "n_samples": 1550,
+          "loss": 0.649511,
+          "accuracy": 0.652903,
+          "gap_vs_in_dist": 0.14459
+        },
+        {
+          "group": "ood",
+          "race": "Black",
+          "n_samples": 1556,
+          "loss": 0.624921,
+          "accuracy": 0.670951,
+          "gap_vs_in_dist": 0.126542
+        },
+        {
+          "group": "ood",
+          "race": "White",
+          "n_samples": 2085,
+          "loss": 0.678969,
+          "accuracy": 0.642686,
+          "gap_vs_in_dist": 0.154808
+        },
+        {
+          "group": "ood",
+          "race": "Middle Eastern",
+          "n_samples": 1209,
+          "loss": 0.616314,
+          "accuracy": 0.674111,
+          "gap_vs_in_dist": 0.123383
+        },
+        {
+          "group": "ood",
+          "race": "Latino_Hispanic",
+          "n_samples": 1623,
+          "loss": 0.525213,
+          "accuracy": 0.729513,
+          "gap_vs_in_dist": 0.06798
+        },
+        {
+          "group": "ood",
+          "race": "Southeast Asian",
+          "n_samples": 1415,
+          "loss": 0.658573,
+          "accuracy": 0.640989,
+          "gap_vs_in_dist": 0.156504
+        },
+        {
+          "group": "ood",
+          "race": "all",
+          "n_samples": 9438,
+          "loss": 0.627696,
+          "accuracy": 0.667726,
+          "gap_vs_in_dist": 0.129767
+        }
+      ],
+      "config": {
+        "dataset_name": "HuggingFaceM4/FairFace",
+        "dataset_config": "1.25",
+        "train_race": "Indian",
+        "epochs": 10,
+        "batch_size": 32,
+        "lr": 0.0001,
+        "weight_decay": 0.0001,
+        "num_workers": 4,
+        "image_size": 224,
+        "seed": 42,
+        "freeze_backbone": false,
+        "pretrained": false,
+        "output_dir": "results/race_comparison"
+      }
+    },
+    {
+      "train_race": {
+        "id": 4,
+        "name": "Middle Eastern"
+      },
+      "summary": {
+        "in_distribution_accuracy": 0.7617866004962779,
+        "mean_out_of_distribution_accuracy": 0.6432447661859427,
+        "worst_out_of_distribution_accuracy": 0.5790488431876607,
+        "gap_mean_ood_vs_in_dist": 0.11854183431033516,
+        "gap_worst_ood_vs_in_dist": 0.1827377573086172
+      },
+      "per_group": [
+        {
+          "group": "in_dist",
+          "race": "Middle Eastern",
+          "n_samples": 1209,
+          "loss": 0.474652,
+          "accuracy": 0.761787,
+          "gap_vs_in_dist": 0.0
+        },
+        {
+          "group": "ood",
+          "race": "East Asian",
+          "n_samples": 1550,
+          "loss": 0.62075,
+          "accuracy": 0.670968,
+          "gap_vs_in_dist": 0.090819
+        },
+        {
+          "group": "ood",
+          "race": "Indian",
+          "n_samples": 1516,
+          "loss": 0.73324,
+          "accuracy": 0.622691,
+          "gap_vs_in_dist": 0.139095
+        },
+        {
+          "group": "ood",
+          "race": "Black",
+          "n_samples": 1556,
+          "loss": 0.879326,
+          "accuracy": 0.579049,
+          "gap_vs_in_dist": 0.182738
+        },
+        {
+          "group": "ood",
+          "race": "White",
+          "n_samples": 2085,
+          "loss": 0.652505,
+          "accuracy": 0.661871,
+          "gap_vs_in_dist": 0.099916
+        },
+        {
+          "group": "ood",
+          "race": "Latino_Hispanic",
+          "n_samples": 1623,
+          "loss": 0.641845,
+          "accuracy": 0.688848,
+          "gap_vs_in_dist": 0.072939
+        },
+        {
+          "group": "ood",
+          "race": "Southeast Asian",
+          "n_samples": 1415,
+          "loss": 0.679297,
+          "accuracy": 0.636042,
+          "gap_vs_in_dist": 0.125744
+        },
+        {
+          "group": "ood",
+          "race": "all",
+          "n_samples": 9745,
+          "loss": 0.698346,
+          "accuracy": 0.644741,
+          "gap_vs_in_dist": 0.117046
+        }
+      ],
+      "config": {
+        "dataset_name": "HuggingFaceM4/FairFace",
+        "dataset_config": "1.25",
+        "train_race": "Middle Eastern",
+        "epochs": 10,
+        "batch_size": 32,
+        "lr": 0.0001,
+        "weight_decay": 0.0001,
+        "num_workers": 4,
+        "image_size": 224,
+        "seed": 42,
+        "freeze_backbone": false,
+        "pretrained": false,
+        "output_dir": "results/race_comparison"
+      }
+    },
+    {
+      "train_race": {
+        "id": 5,
+        "name": "Latino_Hispanic"
+      },
+      "summary": {
+        "in_distribution_accuracy": 0.7547751078250154,
+        "mean_out_of_distribution_accuracy": 0.6683292732610312,
+        "worst_out_of_distribution_accuracy": 0.6131105398457584,
+        "gap_mean_ood_vs_in_dist": 0.08644583456398425,
+        "gap_worst_ood_vs_in_dist": 0.14166456797925708
+      },
+      "per_group": [
+        {
+          "group": "in_dist",
+          "race": "Latino_Hispanic",
+          "n_samples": 1623,
+          "loss": 0.498642,
+          "accuracy": 0.754775,
+          "gap_vs_in_dist": 0.0
+        },
+        {
+          "group": "ood",
+          "race": "East Asian",
+          "n_samples": 1550,
+          "loss": 0.607105,
+          "accuracy": 0.675484,
+          "gap_vs_in_dist": 0.079291
+        },
+        {
+          "group": "ood",
+          "race": "Indian",
+          "n_samples": 1516,
+          "loss": 0.5343,
+          "accuracy": 0.721636,
+          "gap_vs_in_dist": 0.033139
+        },
+        {
+          "group": "ood",
+          "race": "Black",
+          "n_samples": 1556,
+          "loss": 0.700963,
+          "accuracy": 0.613111,
+          "gap_vs_in_dist": 0.141665
+        },
+        {
+          "group": "ood",
+          "race": "White",
+          "n_samples": 2085,
+          "loss": 0.601015,
+          "accuracy": 0.686331,
+          "gap_vs_in_dist": 0.068444
+        },
+        {
+          "group": "ood",
+          "race": "Middle Eastern",
+          "n_samples": 1209,
+          "loss": 0.611278,
+          "accuracy": 0.662531,
+          "gap_vs_in_dist": 0.092244
+        },
+        {
+          "group": "ood",
+          "race": "Southeast Asian",
+          "n_samples": 1415,
+          "loss": 0.666394,
+          "accuracy": 0.650883,
+          "gap_vs_in_dist": 0.103892
+        },
+        {
+          "group": "ood",
+          "race": "all",
+          "n_samples": 9331,
+          "loss": 0.619099,
+          "accuracy": 0.669596,
+          "gap_vs_in_dist": 0.085179
+        }
+      ],
+      "config": {
+        "dataset_name": "HuggingFaceM4/FairFace",
+        "dataset_config": "1.25",
+        "train_race": "Latino_Hispanic",
+        "epochs": 10,
+        "batch_size": 32,
+        "lr": 0.0001,
+        "weight_decay": 0.0001,
+        "num_workers": 4,
+        "image_size": 224,
+        "seed": 42,
+        "freeze_backbone": false,
+        "pretrained": false,
+        "output_dir": "results/race_comparison"
+      }
+    },
+    {
+      "train_race": {
+        "id": 0,
+        "name": "East Asian"
+      },
+      "summary": {
+        "in_distribution_accuracy": 0.7587096774193548,
+        "mean_out_of_distribution_accuracy": 0.6801193381757856,
+        "worst_out_of_distribution_accuracy": 0.5578406169665809,
+        "gap_mean_ood_vs_in_dist": 0.07859033924356917,
+        "gap_worst_ood_vs_in_dist": 0.20086906045277386
+      },
+      "per_group": [
+        {
+          "group": "in_dist",
+          "race": "East Asian",
+          "n_samples": 1550,
+          "loss": 0.495968,
+          "accuracy": 0.75871,
+          "gap_vs_in_dist": 0.0
+        },
+        {
+          "group": "ood",
+          "race": "Indian",
+          "n_samples": 1516,
+          "loss": 0.597103,
+          "accuracy": 0.682718,
+          "gap_vs_in_dist": 0.075992
+        },
+        {
+          "group": "ood",
+          "race": "Black",
+          "n_samples": 1556,
+          "loss": 0.72031,
+          "accuracy": 0.557841,
+          "gap_vs_in_dist": 0.200869
+        },
+        {
+          "group": "ood",
+          "race": "White",
+          "n_samples": 2085,
+          "loss": 0.566929,
+          "accuracy": 0.710312,
+          "gap_vs_in_dist": 0.048398
+        },
+        {
+          "group": "ood",
+          "race": "Middle Eastern",
+          "n_samples": 1209,
+          "loss": 0.532817,
+          "accuracy": 0.740281,
+          "gap_vs_in_dist": 0.018428
+        },
+        {
+          "group": "ood",
+          "race": "Latino_Hispanic",
+          "n_samples": 1623,
+          "loss": 0.569043,
+          "accuracy": 0.710413,
+          "gap_vs_in_dist": 0.048297
+        },
+        {
+          "group": "ood",
+          "race": "Southeast Asian",
+          "n_samples": 1415,
+          "loss": 0.57574,
+          "accuracy": 0.679152,
+          "gap_vs_in_dist": 0.079558
+        },
+        {
+          "group": "ood",
+          "race": "all",
+          "n_samples": 9404,
+          "loss": 0.594477,
+          "accuracy": 0.679923,
+          "gap_vs_in_dist": 0.078786
+        }
+      ],
+      "config": {
+        "dataset_name": "HuggingFaceM4/FairFace",
+        "dataset_config": "1.25",
+        "train_race": "East Asian",
+        "epochs": 10,
+        "batch_size": 32,
+        "lr": 0.0001,
+        "weight_decay": 0.0001,
+        "num_workers": 4,
+        "image_size": 224,
+        "seed": 42,
+        "freeze_backbone": false,
+        "pretrained": false,
+        "output_dir": "results/race_comparison"
+      }
+    },
+    {
+      "train_race": {
+        "id": 6,
+        "name": "Southeast Asian"
+      },
+      "summary": {
+        "in_distribution_accuracy": 0.7236749116607774,
+        "mean_out_of_distribution_accuracy": 0.6838428511828196,
+        "worst_out_of_distribution_accuracy": 0.6208226221079691,
+        "gap_mean_ood_vs_in_dist": 0.03983206047795773,
+        "gap_worst_ood_vs_in_dist": 0.10285228955280823
+      },
+      "per_group": [
+        {
+          "group": "in_dist",
+          "race": "Southeast Asian",
+          "n_samples": 1415,
+          "loss": 0.547715,
+          "accuracy": 0.723675,
+          "gap_vs_in_dist": 0.0
+        },
+        {
+          "group": "ood",
+          "race": "East Asian",
+          "n_samples": 1550,
+          "loss": 0.532059,
+          "accuracy": 0.734839,
+          "gap_vs_in_dist": -0.011164
+        },
+        {
+          "group": "ood",
+          "race": "Indian",
+          "n_samples": 1516,
+          "loss": 0.560128,
+          "accuracy": 0.706464,
+          "gap_vs_in_dist": 0.017211
+        },
+        {
+          "group": "ood",
+          "race": "Black",
+          "n_samples": 1556,
+          "loss": 0.656555,
+          "accuracy": 0.620823,
+          "gap_vs_in_dist": 0.102852
+        },
+        {
+          "group": "ood",
+          "race": "White",
+          "n_samples": 2085,
+          "loss": 0.614383,
+          "accuracy": 0.657074,
+          "gap_vs_in_dist": 0.066601
+        },
+        {
+          "group": "ood",
+          "race": "Middle Eastern",
+          "n_samples": 1209,
+          "loss": 0.594239,
+          "accuracy": 0.666667,
+          "gap_vs_in_dist": 0.057008
+        },
+        {
+          "group": "ood",
+          "race": "Latino_Hispanic",
+          "n_samples": 1623,
+          "loss": 0.547564,
+          "accuracy": 0.71719,
+          "gap_vs_in_dist": 0.006485
+        },
+        {
+          "group": "ood",
+          "race": "all",
+          "n_samples": 9539,
+          "loss": 0.585341,
+          "accuracy": 0.68309,
+          "gap_vs_in_dist": 0.040584
+        }
+      ],
+      "config": {
+        "dataset_name": "HuggingFaceM4/FairFace",
+        "dataset_config": "1.25",
+        "train_race": "Southeast Asian",
+        "epochs": 10,
+        "batch_size": 32,
+        "lr": 0.0001,
+        "weight_decay": 0.0001,
+        "num_workers": 4,
+        "image_size": 224,
+        "seed": 42,
+        "freeze_backbone": false,
+        "pretrained": false,
+        "output_dir": "results/race_comparison"
+      }
+    }
+  ],
+  "comparison": [
+    {
+      "train_race": "White",
+      "in_distribution_accuracy": 0.7904076738609113,
+      "mean_out_of_distribution_accuracy": 0.7416050847386956,
+      "worst_out_of_distribution_accuracy": 0.6638817480719794,
+      "gap_mean_ood_vs_in_dist": 0.04880258912221569,
+      "gap_worst_ood_vs_in_dist": 0.12652592578893185
+    },
+    {
+      "train_race": "Black",
+      "in_distribution_accuracy": 0.6928020565552699,
+      "mean_out_of_distribution_accuracy": 0.6340413646638269,
+      "worst_out_of_distribution_accuracy": 0.5943462897526501,
+      "gap_mean_ood_vs_in_dist": 0.05876069189144306,
+      "gap_worst_ood_vs_in_dist": 0.0984557668026198
+    },
+    {
+      "train_race": "Indian",
+      "in_distribution_accuracy": 0.7974934036939314,
+      "mean_out_of_distribution_accuracy": 0.66852561928425,
+      "worst_out_of_distribution_accuracy": 0.6409893992932862,
+      "gap_mean_ood_vs_in_dist": 0.12896778440968137,
+      "gap_worst_ood_vs_in_dist": 0.15650400440064516
+    },
+    {
+      "train_race": "Middle Eastern",
+      "in_distribution_accuracy": 0.7617866004962779,
+      "mean_out_of_distribution_accuracy": 0.6432447661859427,
+      "worst_out_of_distribution_accuracy": 0.5790488431876607,
+      "gap_mean_ood_vs_in_dist": 0.11854183431033516,
+      "gap_worst_ood_vs_in_dist": 0.1827377573086172
+    },
+    {
+      "train_race": "Latino_Hispanic",
+      "in_distribution_accuracy": 0.7547751078250154,
+      "mean_out_of_distribution_accuracy": 0.6683292732610312,
+      "worst_out_of_distribution_accuracy": 0.6131105398457584,
+      "gap_mean_ood_vs_in_dist": 0.08644583456398425,
+      "gap_worst_ood_vs_in_dist": 0.14166456797925708
+    },
+    {
+      "train_race": "East Asian",
+      "in_distribution_accuracy": 0.7587096774193548,
+      "mean_out_of_distribution_accuracy": 0.6801193381757856,
+      "worst_out_of_distribution_accuracy": 0.5578406169665809,
+      "gap_mean_ood_vs_in_dist": 0.07859033924356917,
+      "gap_worst_ood_vs_in_dist": 0.20086906045277386
+    },
+    {
+      "train_race": "Southeast Asian",
+      "in_distribution_accuracy": 0.7236749116607774,
+      "mean_out_of_distribution_accuracy": 0.6838428511828196,
+      "worst_out_of_distribution_accuracy": 0.6208226221079691,
+      "gap_mean_ood_vs_in_dist": 0.03983206047795773,
+      "gap_worst_ood_vs_in_dist": 0.10285228955280823
+    }
+  ],
+  "detailed_comparison": [
+    {
+      "train_race": "White",
+      "eval_race": "White",
+      "eval_group": "in_dist",
+      "n_samples": 2085,
+      "accuracy": 0.790408,
+      "gap_vs_in_dist": 0.0
+    },
+    {
+      "train_race": "White",
+      "eval_race": "East Asian",
+      "eval_group": "ood",
+      "n_samples": 1550,
+      "accuracy": 0.736129,
+      "gap_vs_in_dist": 0.054279
+    },
+    {
+      "train_race": "White",
+      "eval_race": "Indian",
+      "eval_group": "ood",
+      "n_samples": 1516,
+      "accuracy": 0.757916,
+      "gap_vs_in_dist": 0.032492
+    },
+    {
+      "train_race": "White",
+      "eval_race": "Black",
+      "eval_group": "ood",
+      "n_samples": 1556,
+      "accuracy": 0.663882,
+      "gap_vs_in_dist": 0.126526
+    },
+    {
+      "train_race": "White",
+      "eval_race": "Middle Eastern",
+      "eval_group": "ood",
+      "n_samples": 1209,
+      "accuracy": 0.782465,
+      "gap_vs_in_dist": 0.007943
+    },
+    {
+      "train_race": "White",
+      "eval_race": "Latino_Hispanic",
+      "eval_group": "ood",
+      "n_samples": 1623,
+      "accuracy": 0.790511,
+      "gap_vs_in_dist": -0.000104
+    },
+    {
+      "train_race": "White",
+      "eval_race": "Southeast Asian",
+      "eval_group": "ood",
+      "n_samples": 1415,
+      "accuracy": 0.718728,
+      "gap_vs_in_dist": 0.07168
+    },
+    {
+      "train_race": "White",
+      "eval_race": "all",
+      "eval_group": "ood",
+      "n_samples": 8869,
+      "accuracy": 0.74067,
+      "gap_vs_in_dist": 0.049738
+    },
+    {
+      "train_race": "Black",
+      "eval_race": "Black",
+      "eval_group": "in_dist",
+      "n_samples": 1556,
+      "accuracy": 0.692802,
+      "gap_vs_in_dist": 0.0
+    },
+    {
+      "train_race": "Black",
+      "eval_race": "East Asian",
+      "eval_group": "ood",
+      "n_samples": 1550,
+      "accuracy": 0.629677,
+      "gap_vs_in_dist": 0.063125
+    },
+    {
+      "train_race": "Black",
+      "eval_race": "Indian",
+      "eval_group": "ood",
+      "n_samples": 1516,
+      "accuracy": 0.664248,
+      "gap_vs_in_dist": 0.028554
+    },
+    {
+      "train_race": "Black",
+      "eval_race": "White",
+      "eval_group": "ood",
+      "n_samples": 2085,
+      "accuracy": 0.623501,
+      "gap_vs_in_dist": 0.069301
+    },
+    {
+      "train_race": "Black",
+      "eval_race": "Middle Eastern",
+      "eval_group": "ood",
+      "n_samples": 1209,
+      "accuracy": 0.60794,
+      "gap_vs_in_dist": 0.084862
+    },
+    {
+      "train_race": "Black",
+      "eval_race": "Latino_Hispanic",
+      "eval_group": "ood",
+      "n_samples": 1623,
+      "accuracy": 0.684535,
+      "gap_vs_in_dist": 0.008267
+    },
+    {
+      "train_race": "Black",
+      "eval_race": "Southeast Asian",
+      "eval_group": "ood",
+      "n_samples": 1415,
+      "accuracy": 0.594346,
+      "gap_vs_in_dist": 0.098456
+    },
+    {
+      "train_race": "Black",
+      "eval_race": "all",
+      "eval_group": "ood",
+      "n_samples": 9398,
+      "accuracy": 0.635242,
+      "gap_vs_in_dist": 0.057561
+    },
+    {
+      "train_race": "Indian",
+      "eval_race": "Indian",
+      "eval_group": "in_dist",
+      "n_samples": 1516,
+      "accuracy": 0.797493,
+      "gap_vs_in_dist": 0.0
+    },
+    {
+      "train_race": "Indian",
+      "eval_race": "East Asian",
+      "eval_group": "ood",
+      "n_samples": 1550,
+      "accuracy": 0.652903,
+      "gap_vs_in_dist": 0.14459
+    },
+    {
+      "train_race": "Indian",
+      "eval_race": "Black",
+      "eval_group": "ood",
+      "n_samples": 1556,
+      "accuracy": 0.670951,
+      "gap_vs_in_dist": 0.126542
+    },
+    {
+      "train_race": "Indian",
+      "eval_race": "White",
+      "eval_group": "ood",
+      "n_samples": 2085,
+      "accuracy": 0.642686,
+      "gap_vs_in_dist": 0.154808
+    },
+    {
+      "train_race": "Indian",
+      "eval_race": "Middle Eastern",
+      "eval_group": "ood",
+      "n_samples": 1209,
+      "accuracy": 0.674111,
+      "gap_vs_in_dist": 0.123383
+    },
+    {
+      "train_race": "Indian",
+      "eval_race": "Latino_Hispanic",
+      "eval_group": "ood",
+      "n_samples": 1623,
+      "accuracy": 0.729513,
+      "gap_vs_in_dist": 0.06798
+    },
+    {
+      "train_race": "Indian",
+      "eval_race": "Southeast Asian",
+      "eval_group": "ood",
+      "n_samples": 1415,
+      "accuracy": 0.640989,
+      "gap_vs_in_dist": 0.156504
+    },
+    {
+      "train_race": "Indian",
+      "eval_race": "all",
+      "eval_group": "ood",
+      "n_samples": 9438,
+      "accuracy": 0.667726,
+      "gap_vs_in_dist": 0.129767
+    },
+    {
+      "train_race": "Middle Eastern",
+      "eval_race": "Middle Eastern",
+      "eval_group": "in_dist",
+      "n_samples": 1209,
+      "accuracy": 0.761787,
+      "gap_vs_in_dist": 0.0
+    },
+    {
+      "train_race": "Middle Eastern",
+      "eval_race": "East Asian",
+      "eval_group": "ood",
+      "n_samples": 1550,
+      "accuracy": 0.670968,
+      "gap_vs_in_dist": 0.090819
+    },
+    {
+      "train_race": "Middle Eastern",
+      "eval_race": "Indian",
+      "eval_group": "ood",
+      "n_samples": 1516,
+      "accuracy": 0.622691,
+      "gap_vs_in_dist": 0.139095
+    },
+    {
+      "train_race": "Middle Eastern",
+      "eval_race": "Black",
+      "eval_group": "ood",
+      "n_samples": 1556,
+      "accuracy": 0.579049,
+      "gap_vs_in_dist": 0.182738
+    },
+    {
+      "train_race": "Middle Eastern",
+      "eval_race": "White",
+      "eval_group": "ood",
+      "n_samples": 2085,
+      "accuracy": 0.661871,
+      "gap_vs_in_dist": 0.099916
+    },
+    {
+      "train_race": "Middle Eastern",
+      "eval_race": "Latino_Hispanic",
+      "eval_group": "ood",
+      "n_samples": 1623,
+      "accuracy": 0.688848,
+      "gap_vs_in_dist": 0.072939
+    },
+    {
+      "train_race": "Middle Eastern",
+      "eval_race": "Southeast Asian",
+      "eval_group": "ood",
+      "n_samples": 1415,
+      "accuracy": 0.636042,
+      "gap_vs_in_dist": 0.125744
+    },
+    {
+      "train_race": "Middle Eastern",
+      "eval_race": "all",
+      "eval_group": "ood",
+      "n_samples": 9745,
+      "accuracy": 0.644741,
+      "gap_vs_in_dist": 0.117046
+    },
+    {
+      "train_race": "Latino_Hispanic",
+      "eval_race": "Latino_Hispanic",
+      "eval_group": "in_dist",
+      "n_samples": 1623,
+      "accuracy": 0.754775,
+      "gap_vs_in_dist": 0.0
+    },
+    {
+      "train_race": "Latino_Hispanic",
+      "eval_race": "East Asian",
+      "eval_group": "ood",
+      "n_samples": 1550,
+      "accuracy": 0.675484,
+      "gap_vs_in_dist": 0.079291
+    },
+    {
+      "train_race": "Latino_Hispanic",
+      "eval_race": "Indian",
+      "eval_group": "ood",
+      "n_samples": 1516,
+      "accuracy": 0.721636,
+      "gap_vs_in_dist": 0.033139
+    },
+    {
+      "train_race": "Latino_Hispanic",
+      "eval_race": "Black",
+      "eval_group": "ood",
+      "n_samples": 1556,
+      "accuracy": 0.613111,
+      "gap_vs_in_dist": 0.141665
+    },
+    {
+      "train_race": "Latino_Hispanic",
+      "eval_race": "White",
+      "eval_group": "ood",
+      "n_samples": 2085,
+      "accuracy": 0.686331,
+      "gap_vs_in_dist": 0.068444
+    },
+    {
+      "train_race": "Latino_Hispanic",
+      "eval_race": "Middle Eastern",
+      "eval_group": "ood",
+      "n_samples": 1209,
+      "accuracy": 0.662531,
+      "gap_vs_in_dist": 0.092244
+    },
+    {
+      "train_race": "Latino_Hispanic",
+      "eval_race": "Southeast Asian",
+      "eval_group": "ood",
+      "n_samples": 1415,
+      "accuracy": 0.650883,
+      "gap_vs_in_dist": 0.103892
+    },
+    {
+      "train_race": "Latino_Hispanic",
+      "eval_race": "all",
+      "eval_group": "ood",
+      "n_samples": 9331,
+      "accuracy": 0.669596,
+      "gap_vs_in_dist": 0.085179
+    },
+    {
+      "train_race": "East Asian",
+      "eval_race": "East Asian",
+      "eval_group": "in_dist",
+      "n_samples": 1550,
+      "accuracy": 0.75871,
+      "gap_vs_in_dist": 0.0
+    },
+    {
+      "train_race": "East Asian",
+      "eval_race": "Indian",
+      "eval_group": "ood",
+      "n_samples": 1516,
+      "accuracy": 0.682718,
+      "gap_vs_in_dist": 0.075992
+    },
+    {
+      "train_race": "East Asian",
+      "eval_race": "Black",
+      "eval_group": "ood",
+      "n_samples": 1556,
+      "accuracy": 0.557841,
+      "gap_vs_in_dist": 0.200869
+    },
+    {
+      "train_race": "East Asian",
+      "eval_race": "White",
+      "eval_group": "ood",
+      "n_samples": 2085,
+      "accuracy": 0.710312,
+      "gap_vs_in_dist": 0.048398
+    },
+    {
+      "train_race": "East Asian",
+      "eval_race": "Middle Eastern",
+      "eval_group": "ood",
+      "n_samples": 1209,
+      "accuracy": 0.740281,
+      "gap_vs_in_dist": 0.018428
+    },
+    {
+      "train_race": "East Asian",
+      "eval_race": "Latino_Hispanic",
+      "eval_group": "ood",
+      "n_samples": 1623,
+      "accuracy": 0.710413,
+      "gap_vs_in_dist": 0.048297
+    },
+    {
+      "train_race": "East Asian",
+      "eval_race": "Southeast Asian",
+      "eval_group": "ood",
+      "n_samples": 1415,
+      "accuracy": 0.679152,
+      "gap_vs_in_dist": 0.079558
+    },
+    {
+      "train_race": "East Asian",
+      "eval_race": "all",
+      "eval_group": "ood",
+      "n_samples": 9404,
+      "accuracy": 0.679923,
+      "gap_vs_in_dist": 0.078786
+    },
+    {
+      "train_race": "Southeast Asian",
+      "eval_race": "Southeast Asian",
+      "eval_group": "in_dist",
+      "n_samples": 1415,
+      "accuracy": 0.723675,
+      "gap_vs_in_dist": 0.0
+    },
+    {
+      "train_race": "Southeast Asian",
+      "eval_race": "East Asian",
+      "eval_group": "ood",
+      "n_samples": 1550,
+      "accuracy": 0.734839,
+      "gap_vs_in_dist": -0.011164
+    },
+    {
+      "train_race": "Southeast Asian",
+      "eval_race": "Indian",
+      "eval_group": "ood",
+      "n_samples": 1516,
+      "accuracy": 0.706464,
+      "gap_vs_in_dist": 0.017211
+    },
+    {
+      "train_race": "Southeast Asian",
+      "eval_race": "Black",
+      "eval_group": "ood",
+      "n_samples": 1556,
+      "accuracy": 0.620823,
+      "gap_vs_in_dist": 0.102852
+    },
+    {
+      "train_race": "Southeast Asian",
+      "eval_race": "White",
+      "eval_group": "ood",
+      "n_samples": 2085,
+      "accuracy": 0.657074,
+      "gap_vs_in_dist": 0.066601
+    },
+    {
+      "train_race": "Southeast Asian",
+      "eval_race": "Middle Eastern",
+      "eval_group": "ood",
+      "n_samples": 1209,
+      "accuracy": 0.666667,
+      "gap_vs_in_dist": 0.057008
+    },
+    {
+      "train_race": "Southeast Asian",
+      "eval_race": "Latino_Hispanic",
+      "eval_group": "ood",
+      "n_samples": 1623,
+      "accuracy": 0.71719,
+      "gap_vs_in_dist": 0.006485
+    },
+    {
+      "train_race": "Southeast Asian",
+      "eval_race": "all",
+      "eval_group": "ood",
+      "n_samples": 9539,
+      "accuracy": 0.68309,
+      "gap_vs_in_dist": 0.040584
+    }
+  ]
+}

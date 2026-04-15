@@ -25,7 +25,7 @@ GENDER_MAPPING = {
 }
 
 
-def load_model(checkpoint_path, device):
+def load_resnet_model(checkpoint_path, device):
     model = models.resnet50()
     in_features = model.fc.in_features
     model.fc = nn.Linear(in_features, 1)
@@ -35,6 +35,28 @@ def load_model(checkpoint_path, device):
     model.to(device)
     model.eval()
     return model
+
+
+def load_vgg_model(checkpoint_path, device):
+    model = models.vgg16()
+    in_features = model.classifier[6].in_features
+    model.classifier[6] = nn.Linear(in_features, 1)
+    
+    checkpoint = torch.load(checkpoint_path, map_location=device)
+    model.load_state_dict(checkpoint["model_state_dict"])
+    model.to(device)
+    model.eval()
+    return model
+
+
+def load_model(checkpoint_path, device, model_type="resnet50"):
+    """Load a model checkpoint. Supports resnet50 and vgg16."""
+    if model_type.lower() == "resnet50":
+        return load_resnet_model(checkpoint_path, device)
+    elif model_type.lower() == "vgg16":
+        return load_vgg_model(checkpoint_path, device)
+    else:
+        raise ValueError(f"Unknown model type: {model_type}. Supported: resnet50, vgg16")
 
 
 def get_eval_transform():
@@ -64,9 +86,14 @@ def denormalize_image(tensor):
     return tensor.cpu().numpy().transpose(1, 2, 0)
 
 
-def generate_gradcam(model, input_tensor, device):
+def generate_gradcam(model, input_tensor, device, model_type="resnet50"):
     """Generate grad-CAM heatmap for the input tensor."""
-    target_layers = [model.layer4[-1]]
+    if model_type.lower() == "resnet50":
+        target_layers = [model.layer4[-1]]
+    elif model_type.lower() == "vgg16":
+        target_layers = [model.features[-1]]
+    else:
+        raise ValueError(f"Unknown model type: {model_type}. Supported: resnet50, vgg16")
     
     with GradCAM(model=model, target_layers=target_layers) as cam:
         # For binary classification, we look at positive class (female, class 1)
@@ -76,7 +103,7 @@ def generate_gradcam(model, input_tensor, device):
     return grayscale_cam[0, :]
 
 
-def visualize_race_group(model, dataset, race_id, transform, device, output_dir, num_samples=5):
+def visualize_race_group(model, dataset, race_id, transform, device, output_dir, num_samples=5, model_type="resnet50"):
     """Visualize grad-CAM for samples of a specific race."""
     race_name = RACE_MAPPING.get(race_id, f"Race_{race_id}")
     race_dir = os.path.join(output_dir, f"race_{race_id}_{race_name}")
@@ -103,7 +130,7 @@ def visualize_race_group(model, dataset, race_id, transform, device, output_dir,
             logits = model(input_batch)
             prediction = torch.sigmoid(logits).item()
         
-        grayscale_cam = generate_gradcam(model, input_batch, device)
+        grayscale_cam = generate_gradcam(model, input_batch, device, model_type)
         
         # Denormalize for visualization
         denorm_image = denormalize_image(processed_image)
@@ -128,6 +155,7 @@ def visualize_race_group(model, dataset, race_id, transform, device, output_dir,
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Visualize grad-CAM for gender classification across races")
+    parser.add_argument("--model-type", type=str, default="resnet50", choices=["resnet50", "vgg16"])
     parser.add_argument("--checkpoint", type=str, default="results/resnet50_best.pt")
     parser.add_argument("--dataset-name", type=str, default="HuggingFaceM4/FairFace")
     parser.add_argument("--dataset-config", type=str, default="1.25")
@@ -141,7 +169,7 @@ def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
     print("Loading model...")
-    model = load_model(args.checkpoint, device)
+    model = load_model(args.checkpoint, device, model_type=args.model_type)
     
     print("Loading dataset...")
     dataset = load_dataset(args.dataset_name, args.dataset_config, split="validation")
@@ -163,6 +191,7 @@ def main():
             device,
             args.output_dir,
             args.num_samples_per_race,
+            model_type=args.model_type,
         )
     
     print(f"\nVisualizations saved to {args.output_dir}")
