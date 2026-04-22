@@ -1,0 +1,95 @@
+{
+  "train_race": {
+    "id": 5,
+    "name": "Latino_Hispanic"
+  },
+  "summary": {
+    "in_distribution_accuracy": 0.5243376463339495,
+    "mean_out_of_distribution_accuracy": 0.5508016896501191,
+    "worst_out_of_distribution_accuracy": 0.5167095115681234,
+    "gap_mean_ood_vs_in_dist": -0.026464043316169583,
+    "gap_worst_ood_vs_in_dist": 0.007628134765826133
+  },
+  "per_group": [
+    {
+      "group": "in_dist",
+      "race": "Latino_Hispanic",
+      "n_samples": 1623,
+      "loss": 0.69319,
+      "accuracy": 0.524338,
+      "gap_vs_in_dist": 0.0
+    },
+    {
+      "group": "ood",
+      "race": "East Asian",
+      "n_samples": 1550,
+      "loss": 0.689676,
+      "accuracy": 0.522581,
+      "gap_vs_in_dist": 0.001757
+    },
+    {
+      "group": "ood",
+      "race": "Indian",
+      "n_samples": 1516,
+      "loss": 0.691782,
+      "accuracy": 0.521768,
+      "gap_vs_in_dist": 0.00257
+    },
+    {
+      "group": "ood",
+      "race": "Black",
+      "n_samples": 1556,
+      "loss": 0.694471,
+      "accuracy": 0.51671,
+      "gap_vs_in_dist": 0.007628
+    },
+    {
+      "group": "ood",
+      "race": "White",
+      "n_samples": 2085,
+      "loss": 0.685457,
+      "accuracy": 0.5506,
+      "gap_vs_in_dist": -0.026262
+    },
+    {
+      "group": "ood",
+      "race": "Middle Eastern",
+      "n_samples": 1209,
+      "loss": 0.65406,
+      "accuracy": 0.661704,
+      "gap_vs_in_dist": -0.137366
+    },
+    {
+      "group": "ood",
+      "race": "Southeast Asian",
+      "n_samples": 1415,
+      "loss": 0.686904,
+      "accuracy": 0.531449,
+      "gap_vs_in_dist": -0.007111
+    },
+    {
+      "group": "ood",
+      "race": "all",
+      "n_samples": 9331,
+      "loss": 0.68484,
+      "accuracy": 0.547101,
+      "gap_vs_in_dist": -0.022763
+    }
+  ],
+  "config": {
+    "dataset_name": "HuggingFaceM4/FairFace",
+    "dataset_config": "1.25",
+    "model_name": "google/vit-base-patch16-224",
+    "train_race": "Latino_Hispanic",
+    "epochs": 10,
+    "batch_size": 32,
+    "lr": 0.0001,
+    "weight_decay": 0.0001,
+    "num_workers": 4,
+    "image_size": 224,
+    "seed": 42,
+    "freeze_backbone": false,
+    "pretrained": false,
+    "output_dir": "results/race_comparison"
+  }
+}

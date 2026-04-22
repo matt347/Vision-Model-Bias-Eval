@@ -1,0 +1,226 @@
+{
+  "in_dist::Southeast Asian": {
+    "confusion_matrix": [
+      [
+        441,
+        294
+      ],
+      [
+        128,
+        552
+      ]
+    ],
+    "matrix_labels": [
+      "Female (0)",
+      "Male (1)"
+    ],
+    "metrics": {
+      "accuracy": 0.7017667844522968,
+      "precision": 0.6524822695035462,
+      "recall": 0.8117647058823529,
+      "f1_score": 0.7234600262123198,
+      "specificity": 0.6,
+      "true_negatives": 441,
+      "false_positives": 294,
+      "false_negatives": 128,
+      "true_positives": 552
+    },
+    "n_samples": 1415
+  },
+  "ood::East Asian": {
+    "confusion_matrix": [
+      [
+        462,
+        315
+      ],
+      [
+        125,
+        648
+      ]
+    ],
+    "matrix_labels": [
+      "Female (0)",
+      "Male (1)"
+    ],
+    "metrics": {
+      "accuracy": 0.7161290322580646,
+      "precision": 0.6728971962616822,
+      "recall": 0.8382923673997412,
+      "f1_score": 0.7465437788018433,
+      "specificity": 0.5945945945945946,
+      "true_negatives": 462,
+      "false_positives": 315,
+      "false_negatives": 125,
+      "true_positives": 648
+    },
+    "n_samples": 1550
+  },
+  "ood::Indian": {
+    "confusion_matrix": [
+      [
+        496,
+        257
+      ],
+      [
+        176,
+        587
+      ]
+    ],
+    "matrix_labels": [
+      "Female (0)",
+      "Male (1)"
+    ],
+    "metrics": {
+      "accuracy": 0.7143799472295514,
+      "precision": 0.6954976303317536,
+      "recall": 0.7693315858453473,
+      "f1_score": 0.730553827006845,
+      "specificity": 0.6586985391766268,
+      "true_negatives": 496,
+      "false_positives": 257,
+      "false_negatives": 176,
+      "true_positives": 587
+    },
+    "n_samples": 1516
+  },
+  "ood::Black": {
+    "confusion_matrix": [
+      [
+        493,
+        306
+      ],
+      [
+        231,
+        526
+      ]
+    ],
+    "matrix_labels": [
+      "Female (0)",
+      "Male (1)"
+    ],
+    "metrics": {
+      "accuracy": 0.6548843187660668,
+      "precision": 0.6322115384615384,
+      "recall": 0.6948480845442536,
+      "f1_score": 0.6620516047828824,
+      "specificity": 0.6170212765957447,
+      "true_negatives": 493,
+      "false_positives": 306,
+      "false_negatives": 231,
+      "true_positives": 526
+    },
+    "n_samples": 1556
+  },
+  "ood::White": {
+    "confusion_matrix": [
+      [
+        633,
+        489
+      ],
+      [
+        203,
+        760
+      ]
+    ],
+    "matrix_labels": [
+      "Female (0)",
+      "Male (1)"
+    ],
+    "metrics": {
+      "accuracy": 0.66810551558753,
+      "precision": 0.6084867894315452,
+      "recall": 0.7892004153686397,
+      "f1_score": 0.6871609403254972,
+      "specificity": 0.5641711229946524,
+      "true_negatives": 633,
+      "false_positives": 489,
+      "false_negatives": 203,
+      "true_positives": 760
+    },
+    "n_samples": 2085
+  },
+  "ood::Middle Eastern": {
+    "confusion_matrix": [
+      [
+        473,
+        340
+      ],
+      [
+        74,
+        322
+      ]
+    ],
+    "matrix_labels": [
+      "Female (0)",
+      "Male (1)"
+    ],
+    "metrics": {
+      "accuracy": 0.6575682382133995,
+      "precision": 0.486404833836858,
+      "recall": 0.8131313131313131,
+      "f1_score": 0.6086956521739131,
+      "specificity": 0.5817958179581796,
+      "true_negatives": 473,
+      "false_positives": 340,
+      "false_negatives": 74,
+      "true_positives": 322
+    },
+    "n_samples": 1209
+  },
+  "ood::Latino_Hispanic": {
+    "confusion_matrix": [
+      [
+        488,
+        305
+      ],
+      [
+        141,
+        689
+      ]
+    ],
+    "matrix_labels": [
+      "Female (0)",
+      "Male (1)"
+    ],
+    "metrics": {
+      "accuracy": 0.7252002464571781,
+      "precision": 0.693158953722334,
+      "recall": 0.8301204819277108,
+      "f1_score": 0.7554824561403508,
+      "specificity": 0.6153846153846154,
+      "true_negatives": 488,
+      "false_positives": 305,
+      "false_negatives": 141,
+      "true_positives": 689
+    },
+    "n_samples": 1623
+  },
+  "ood::all": {
+    "confusion_matrix": [
+      [
+        3045,
+        2012
+      ],
+      [
+        950,
+        3532
+      ]
+    ],
+    "matrix_labels": [
+      "Female (0)",
+      "Male (1)"
+    ],
+    "metrics": {
+      "accuracy": 0.6894852709927666,
+      "precision": 0.637085137085137,
+      "recall": 0.788041053101294,
+      "f1_score": 0.7045681228805106,
+      "specificity": 0.6021356535495352,
+      "true_negatives": 3045,
+      "false_positives": 2012,
+      "false_negatives": 950,
+      "true_positives": 3532
+    },
+    "n_samples": 9539
+  }
+}

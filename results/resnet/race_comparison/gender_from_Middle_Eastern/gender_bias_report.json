@@ -4,76 +4,76 @@
     "name": "Middle Eastern"
   },
   "summary": {
-    "in_distribution_accuracy": 0.7617866004962779,
-    "mean_out_of_distribution_accuracy": 0.6432447661859427,
-    "worst_out_of_distribution_accuracy": 0.5790488431876607,
-    "gap_mean_ood_vs_in_dist": 0.11854183431033516,
-    "gap_worst_ood_vs_in_dist": 0.1827377573086172
+    "in_distribution_accuracy": 0.7634408602150538,
+    "mean_out_of_distribution_accuracy": 0.6346119462932412,
+    "worst_out_of_distribution_accuracy": 0.5745501285347043,
+    "gap_mean_ood_vs_in_dist": 0.1288289139218125,
+    "gap_worst_ood_vs_in_dist": 0.18889073168034942
   },
   "per_group": [
     {
       "group": "in_dist",
       "race": "Middle Eastern",
       "n_samples": 1209,
-      "loss": 0.474652,
-      "accuracy": 0.761787,
+      "loss": 0.483278,
+      "accuracy": 0.763441,
       "gap_vs_in_dist": 0.0
     },
     {
       "group": "ood",
       "race": "East Asian",
       "n_samples": 1550,
-      "loss": 0.62075,
-      "accuracy": 0.670968,
-      "gap_vs_in_dist": 0.090819
+      "loss": 0.638021,
+      "accuracy": 0.65871,
+      "gap_vs_in_dist": 0.104731
     },
     {
       "group": "ood",
       "race": "Indian",
       "n_samples": 1516,
-      "loss": 0.73324,
-      "accuracy": 0.622691,
-      "gap_vs_in_dist": 0.139095
+      "loss": 0.759818,
+      "accuracy": 0.617414,
+      "gap_vs_in_dist": 0.146027
     },
     {
       "group": "ood",
       "race": "Black",
       "n_samples": 1556,
-      "loss": 0.879326,
-      "accuracy": 0.579049,
-      "gap_vs_in_dist": 0.182738
+      "loss": 0.917073,
+      "accuracy": 0.57455,
+      "gap_vs_in_dist": 0.188891
     },
     {
       "group": "ood",
       "race": "White",
       "n_samples": 2085,
-      "loss": 0.652505,
-      "accuracy": 0.661871,
-      "gap_vs_in_dist": 0.099916
+      "loss": 0.669229,
+      "accuracy": 0.653237,
+      "gap_vs_in_dist": 0.110203
     },
     {
       "group": "ood",
       "race": "Latino_Hispanic",
       "n_samples": 1623,
-      "loss": 0.641845,
-      "accuracy": 0.688848,
-      "gap_vs_in_dist": 0.072939
+      "loss": 0.65498,
+      "accuracy": 0.669131,
+      "gap_vs_in_dist": 0.09431
     },
     {
       "group": "ood",
       "race": "Southeast Asian",
       "n_samples": 1415,
-      "loss": 0.679297,
-      "accuracy": 0.636042,
-      "gap_vs_in_dist": 0.125744
+      "loss": 0.700497,
+      "accuracy": 0.634629,
+      "gap_vs_in_dist": 0.128812
     },
     {
       "group": "ood",
       "race": "all",
       "n_samples": 9745,
-      "loss": 0.698346,
-      "accuracy": 0.644741,
-      "gap_vs_in_dist": 0.117046
+      "loss": 0.720098,
+      "accuracy": 0.635916,
+      "gap_vs_in_dist": 0.127525
     }
   ],
   "config": {

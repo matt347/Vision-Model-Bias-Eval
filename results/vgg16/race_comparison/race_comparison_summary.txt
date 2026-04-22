@@ -1,72 +1,72 @@
 === Run-Level Comparison ===
 Train Race      | In-Dist | Mean OOD | Worst OOD | Gap Mean | Gap Worst
 ----------------|---------|----------|-----------|----------|----------
-White           | 0.8038  | 0.7687   | 0.6986    | 0.0352   | 0.1053   
-Black           | 0.7841  | 0.7150   | 0.6587    | 0.0691   | 0.1254   
-Indian          | 0.7929  | 0.7732   | 0.6960    | 0.0197   | 0.0969   
-Middle Eastern  | 0.8503  | 0.7412   | 0.6562    | 0.1091   | 0.1941   
-Latino_Hispanic | 0.7979  | 0.7749   | 0.7320    | 0.0230   | 0.0659   
-East Asian      | 0.8032  | 0.7703   | 0.6896    | 0.0329   | 0.1136   
-Southeast Asian | 0.7845  | 0.7592   | 0.6838    | 0.0253   | 0.1006   
+White           | 0.7103  | 0.6824   | 0.5945    | 0.0279   | 0.1158   
+Black           | 0.6799  | 0.6215   | 0.5823    | 0.0584   | 0.0976   
+Indian          | 0.8377  | 0.7575   | 0.7118    | 0.0802   | 0.1260   
+Middle Eastern  | 0.8280  | 0.7149   | 0.6440    | 0.1131   | 0.1840   
+Latino_Hispanic | 0.5114  | 0.4597   | 0.3275    | 0.0517   | 0.1839   
+East Asian      | 0.8213  | 0.7705   | 0.6883    | 0.0508   | 0.1330   
+Southeast Asian | 0.5194  | 0.5351   | 0.4886    | -0.0157  | 0.0308   
 
 === Per-Race Evaluation Comparison ===
 Train Race      | Eval Race       | Eval Group | Samples | Accuracy | Gap vs In-Dist
 ----------------|-----------------|------------|---------|----------|---------------
-White           | White           | in_dist    | 2085    | 0.8038   | 0.0000        
-White           | East Asian      | ood        | 1550    | 0.7916   | 0.0122        
-White           | Indian          | ood        | 1516    | 0.7579   | 0.0459        
-White           | Black           | ood        | 1556    | 0.6986   | 0.1053        
-White           | Middle Eastern  | ood        | 1209    | 0.8139   | -0.0101       
-White           | Latino_Hispanic | ood        | 1623    | 0.7819   | 0.0220        
-White           | Southeast Asian | ood        | 1415    | 0.7682   | 0.0356        
-White           | all             | ood        | 8869    | 0.7671   | 0.0368        
-Black           | Black           | in_dist    | 1556    | 0.7841   | 0.0000        
-Black           | East Asian      | ood        | 1550    | 0.6968   | 0.0873        
-Black           | Indian          | ood        | 1516    | 0.7150   | 0.0690        
-Black           | White           | ood        | 2085    | 0.7511   | 0.0330        
-Black           | Middle Eastern  | ood        | 1209    | 0.7229   | 0.0612        
-Black           | Latino_Hispanic | ood        | 1623    | 0.7455   | 0.0385        
-Black           | Southeast Asian | ood        | 1415    | 0.6587   | 0.1254        
-Black           | all             | ood        | 9398    | 0.7178   | 0.0662        
-Indian          | Indian          | in_dist    | 1516    | 0.7929   | 0.0000        
-Indian          | East Asian      | ood        | 1550    | 0.7858   | 0.0071        
-Indian          | Black           | ood        | 1556    | 0.6960   | 0.0969        
-Indian          | White           | ood        | 2085    | 0.7871   | 0.0058        
-Indian          | Middle Eastern  | ood        | 1209    | 0.8296   | -0.0367       
-Indian          | Latino_Hispanic | ood        | 1623    | 0.7776   | 0.0153        
-Indian          | Southeast Asian | ood        | 1415    | 0.7633   | 0.0296        
-Indian          | all             | ood        | 9438    | 0.7721   | 0.0208        
-Middle Eastern  | Middle Eastern  | in_dist    | 1209    | 0.8503   | 0.0000        
-Middle Eastern  | East Asian      | ood        | 1550    | 0.7742   | 0.0761        
-Middle Eastern  | Indian          | ood        | 1516    | 0.7394   | 0.1108        
-Middle Eastern  | Black           | ood        | 1556    | 0.6562   | 0.1941        
-Middle Eastern  | White           | ood        | 2085    | 0.7727   | 0.0776        
-Middle Eastern  | Latino_Hispanic | ood        | 1623    | 0.7394   | 0.1109        
-Middle Eastern  | Southeast Asian | ood        | 1415    | 0.7654   | 0.0849        
-Middle Eastern  | all             | ood        | 9745    | 0.7425   | 0.1078        
-Latino_Hispanic | Latino_Hispanic | in_dist    | 1623    | 0.7979   | 0.0000        
-Latino_Hispanic | East Asian      | ood        | 1550    | 0.7839   | 0.0140        
-Latino_Hispanic | Indian          | ood        | 1516    | 0.7711   | 0.0268        
-Latino_Hispanic | Black           | ood        | 1556    | 0.7320   | 0.0659        
-Latino_Hispanic | White           | ood        | 2085    | 0.8062   | -0.0083       
-Latino_Hispanic | Middle Eastern  | ood        | 1209    | 0.7974   | 0.0006        
-Latino_Hispanic | Southeast Asian | ood        | 1415    | 0.7590   | 0.0389        
-Latino_Hispanic | all             | ood        | 9331    | 0.7761   | 0.0218        
-East Asian      | East Asian      | in_dist    | 1550    | 0.8032   | 0.0000        
-East Asian      | Indian          | ood        | 1516    | 0.7599   | 0.0433        
-East Asian      | Black           | ood        | 1556    | 0.6896   | 0.1136        
-East Asian      | White           | ood        | 2085    | 0.8024   | 0.0008        
-East Asian      | Middle Eastern  | ood        | 1209    | 0.8205   | -0.0173       
-East Asian      | Latino_Hispanic | ood        | 1623    | 0.7726   | 0.0306        
-East Asian      | Southeast Asian | ood        | 1415    | 0.7767   | 0.0265        
-East Asian      | all             | ood        | 9404    | 0.7702   | 0.0330        
-Southeast Asian | Southeast Asian | in_dist    | 1415    | 0.7845   | 0.0000        
-Southeast Asian | East Asian      | ood        | 1550    | 0.7826   | 0.0019        
-Southeast Asian | Indian          | ood        | 1516    | 0.7480   | 0.0364        
-Southeast Asian | Black           | ood        | 1556    | 0.6838   | 0.1006        
-Southeast Asian | White           | ood        | 2085    | 0.7918   | -0.0074       
-Southeast Asian | Middle Eastern  | ood        | 1209    | 0.7916   | -0.0071       
-Southeast Asian | Latino_Hispanic | ood        | 1623    | 0.7572   | 0.0272        
-Southeast Asian | all             | ood        | 9539    | 0.7598   | 0.0246        
+White           | White           | in_dist    | 2085    | 0.7103   | 0.0000        
+White           | East Asian      | ood        | 1550    | 0.7019   | 0.0084        
+White           | Indian          | ood        | 1516    | 0.6906   | 0.0197        
+White           | Black           | ood        | 1556    | 0.5945   | 0.1158        
+White           | Middle Eastern  | ood        | 1209    | 0.7734   | -0.0631       
+White           | Latino_Hispanic | ood        | 1623    | 0.6901   | 0.0202        
+White           | Southeast Asian | ood        | 1415    | 0.6438   | 0.0665        
+White           | all             | ood        | 8869    | 0.6794   | 0.0309        
+Black           | Black           | in_dist    | 1556    | 0.6799   | 0.0000        
+Black           | East Asian      | ood        | 1550    | 0.6161   | 0.0638        
+Black           | Indian          | ood        | 1516    | 0.6563   | 0.0236        
+Black           | White           | ood        | 2085    | 0.6038   | 0.0761        
+Black           | Middle Eastern  | ood        | 1209    | 0.6137   | 0.0662        
+Black           | Latino_Hispanic | ood        | 1623    | 0.6568   | 0.0231        
+Black           | Southeast Asian | ood        | 1415    | 0.5823   | 0.0976        
+Black           | all             | ood        | 9398    | 0.6215   | 0.0584        
+Indian          | Indian          | in_dist    | 1516    | 0.8377   | 0.0000        
+Indian          | East Asian      | ood        | 1550    | 0.7452   | 0.0926        
+Indian          | Black           | ood        | 1556    | 0.7140   | 0.1237        
+Indian          | White           | ood        | 2085    | 0.7118   | 0.1260        
+Indian          | Middle Eastern  | ood        | 1209    | 0.8139   | 0.0238        
+Indian          | Latino_Hispanic | ood        | 1623    | 0.8269   | 0.0109        
+Indian          | Southeast Asian | ood        | 1415    | 0.7336   | 0.1042        
+Indian          | all             | ood        | 9438    | 0.7538   | 0.0840        
+Middle Eastern  | Middle Eastern  | in_dist    | 1209    | 0.8280   | 0.0000        
+Middle Eastern  | East Asian      | ood        | 1550    | 0.7071   | 0.1209        
+Middle Eastern  | Indian          | ood        | 1516    | 0.7216   | 0.1063        
+Middle Eastern  | Black           | ood        | 1556    | 0.6440   | 0.1840        
+Middle Eastern  | White           | ood        | 2085    | 0.7357   | 0.0922        
+Middle Eastern  | Latino_Hispanic | ood        | 1623    | 0.7807   | 0.0473        
+Middle Eastern  | Southeast Asian | ood        | 1415    | 0.7004   | 0.1276        
+Middle Eastern  | all             | ood        | 9745    | 0.7167   | 0.1113        
+Latino_Hispanic | Latino_Hispanic | in_dist    | 1623    | 0.5114   | 0.0000        
+Latino_Hispanic | East Asian      | ood        | 1550    | 0.4987   | 0.0127        
+Latino_Hispanic | Indian          | ood        | 1516    | 0.5033   | 0.0081        
+Latino_Hispanic | Black           | ood        | 1556    | 0.4865   | 0.0249        
+Latino_Hispanic | White           | ood        | 2085    | 0.4619   | 0.0495        
+Latino_Hispanic | Middle Eastern  | ood        | 1209    | 0.3275   | 0.1839        
+Latino_Hispanic | Southeast Asian | ood        | 1415    | 0.4806   | 0.0308        
+Latino_Hispanic | all             | ood        | 9331    | 0.4643   | 0.0471        
+East Asian      | East Asian      | in_dist    | 1550    | 0.8213   | 0.0000        
+East Asian      | Indian          | ood        | 1516    | 0.8047   | 0.0165        
+East Asian      | Black           | ood        | 1556    | 0.6883   | 0.1330        
+East Asian      | White           | ood        | 2085    | 0.7506   | 0.0707        
+East Asian      | Middle Eastern  | ood        | 1209    | 0.7651   | 0.0562        
+East Asian      | Latino_Hispanic | ood        | 1623    | 0.8158   | 0.0055        
+East Asian      | Southeast Asian | ood        | 1415    | 0.7986   | 0.0227        
+East Asian      | all             | ood        | 9404    | 0.7694   | 0.0519        
+Southeast Asian | Southeast Asian | in_dist    | 1415    | 0.5194   | 0.0000        
+Southeast Asian | East Asian      | ood        | 1550    | 0.5013   | 0.0181        
+Southeast Asian | Indian          | ood        | 1516    | 0.4967   | 0.0227        
+Southeast Asian | Black           | ood        | 1556    | 0.5135   | 0.0059        
+Southeast Asian | White           | ood        | 2085    | 0.5381   | -0.0187       
+Southeast Asian | Middle Eastern  | ood        | 1209    | 0.6725   | -0.1530       
+Southeast Asian | Latino_Hispanic | ood        | 1623    | 0.4886   | 0.0308        
+Southeast Asian | all             | ood        | 9539    | 0.5301   | -0.0107       
 
 Aggregate JSON: results/vgg16/race_comparison/race_comparison_summary.json
