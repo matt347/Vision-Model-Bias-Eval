@@ -14,6 +14,13 @@ from torchvision import transforms
 from tqdm import tqdm
 from transformers import ViTConfig, ViTForImageClassification, ViTImageProcessor
 
+from confusion_matrix_utils import (
+	compute_confusion_matrices,
+	create_metrics_comparison_table,
+	save_confusion_matrices,
+	visualize_confusion_matrices,
+)
+
 
 def set_seed(seed):
 	random.seed(seed)
@@ -365,6 +372,28 @@ def main():
 
 	json_path = save_report(out_dir, report)
 
+	# Generate confusion matrices
+	print("\n=== Generating Confusion Matrices ===")
+	confusion_matrices = compute_confusion_matrices(
+		model=model,
+		eval_groups=eval_groups,
+		dataloader_dict=eval_loaders,
+		device=device,
+		race_names=race_names,
+	)
+
+	# Save confusion matrices
+	cm_json_path = save_confusion_matrices(confusion_matrices, out_dir)
+	print(f"Confusion matrices saved to: {cm_json_path}")
+
+	# Create visualizations
+	print("Creating confusion matrix visualizations...")
+	visualize_confusion_matrices(confusion_matrices, out_dir)
+
+	# Create comparison table
+	print("Creating metrics comparison table...")
+	cm_txt_path = create_metrics_comparison_table(confusion_matrices, out_dir)
+
 	print("\n=== Bias Summary ===")
 	print(f"In-dist accuracy ({train_race_name}): {in_dist_acc:.4f}")
 	print(f"Mean OOD accuracy: {mean_ood_acc:.4f}")
@@ -372,6 +401,9 @@ def main():
 	print(f"Accuracy gap (in-dist - mean OOD): {in_dist_acc - mean_ood_acc:.4f}")
 	print(f"Accuracy gap (in-dist - worst OOD): {in_dist_acc - worst_ood_acc:.4f}")
 	print(f"Report JSON: {json_path}")
+	print(f"Confusion matrices: {cm_json_path}")
+	print(f"Comparison table: {cm_txt_path}")
+	print(f"Visualizations saved to: {out_dir}")
 
 
 if __name__ == "__main__":

@@ -25,6 +25,17 @@ GENDER_MAPPING = {
 }
 
 
+class ViTLogitsWrapper(nn.Module):
+    """Wrapper so that Grad-CAM receives tensor logits instead of Hugging Face output objects for ViT"""
+
+    def __init__(self, model):
+        super().__init__()
+        self.model = model
+
+    def forward(self, input_tensor):
+        return self.model(pixel_values=input_tensor).logits
+
+
 def load_resnet_model(checkpoint_path, device):
     model = models.resnet50()
     in_features = model.fc.in_features
@@ -161,19 +172,20 @@ def get_vit_cam_components(model):
 def generate_gradcam(model, input_tensor, device, model_type="resnet50"):
     """Generate grad-CAM heatmap for the input tensor."""
     reshape_transform = None
+    cam_model = model
     if model_type.lower() == "resnet50":
         target_layers = [model.layer4[-1]]
     elif model_type.lower() == "vgg16":
         target_layers = [model.features[-1]]
     elif model_type.lower() == "vit":
         target_layers, reshape_transform = get_vit_cam_components(model)
+        cam_model = ViTLogitsWrapper(model)
     else:
         raise ValueError(f"Unknown model type: {model_type}. Supported: resnet50, vgg16, vit")
     
-    with GradCAM(model=model, target_layers=target_layers, reshape_transform=reshape_transform) as cam:
+    with GradCAM(model=cam_model, target_layers=target_layers, reshape_transform=reshape_transform) as cam:
         # For binary classification, we look at positive class (female, class 1)
-        targets = None
-        grayscale_cam = cam(input_tensor=input_tensor, targets=targets)
+        grayscale_cam = cam(input_tensor=input_tensor, targets=None)
     
     return grayscale_cam[0, :]
 
